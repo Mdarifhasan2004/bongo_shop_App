@@ -51,7 +51,7 @@ class _passresetState extends State<passreset> {
               child: Text("Forgot your password?",
                   style: GoogleFonts.roboto(
                       textStyle: TextStyle(
-                          color: Color(0xFF505050),
+                          color: Color(0xFF3BB73E),
                           fontSize: hei / 30,
                           fontWeight: FontWeight.bold))),
             ),
@@ -79,14 +79,14 @@ class _passresetState extends State<passreset> {
                 child: TextField(
                   controller: resetpass_con,
                   style: TextStyle(fontSize: hei / 30),
-                  cursorColor: Color(0xFF505050),
+                  cursorColor: Color(0xFF3BB73E),
                   decoration: InputDecoration(
                       hintText: "Email",
                       hintStyle: TextStyle(fontSize: hei / 40),
                       filled: true,
                       fillColor: Color(0xFFF4F5F7),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF505050))),
+                          borderSide: BorderSide(color: Color(0xFF3BB73E))),
                       border: OutlineInputBorder()),
                 ),
               ),
@@ -133,7 +133,7 @@ class _passresetState extends State<passreset> {
                   height: hei / 15,
                   width: wid / 1.3,
                   decoration: BoxDecoration(
-                    color: Color(0xFF505050),
+                    color: Color(0xFF3BB73E),
                   ),
                   child: TextButton(
                       onPressed: () {
@@ -189,7 +189,7 @@ class _passresetState extends State<passreset> {
                                             height: hei / 15,
                                             width: wid / 1.3,
                                             decoration: BoxDecoration(
-                                              color: Color(0xFF505050),
+                                              color: Color(0xFF3BB73E),
                                             ),
                                             child: TextButton(
                                                 onPressed: () {

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bongo.next.bango_shop">
    <application
-        android:label="bango_shop"
+        android:label="Bongo Shop"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

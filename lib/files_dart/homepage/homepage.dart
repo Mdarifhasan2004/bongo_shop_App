@@ -1,3 +1,10 @@
+import 'package:bango_shop/Catagories/Caps.dart';
+import 'package:bango_shop/Catagories/Electronics.dart';
+import 'package:bango_shop/Catagories/Gadgets.dart';
+import 'package:bango_shop/Catagories/Global.dart';
+import 'package:bango_shop/Catagories/Health.dart';
+import 'package:bango_shop/Catagories/Shirts.dart';
+import 'package:bango_shop/Catagories/T_shirts.dart';
 import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -11,6 +18,8 @@ import 'package:bango_shop/files_dart/homepage/productinformation.dart';
 import 'package:bango_shop/files_dart/product_details/custom_product_details.dart';
 import 'package:bango_shop/files_dart/profile/profiles.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
+
+import 'Product_Listview.dart';
 
 class homepage_app extends StatefulWidget {
   @override
@@ -124,7 +133,9 @@ class _homepage_appState extends State<homepage_app> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Shirt()));
+                              },
                               child: Padding(
                                 padding: EdgeInsets.only(
                                     top: hei / 100,
@@ -154,7 +165,9 @@ class _homepage_appState extends State<homepage_app> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_T_shirt()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -177,7 +190,9 @@ class _homepage_appState extends State<homepage_app> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Caps()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -200,7 +215,9 @@ class _homepage_appState extends State<homepage_app> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Gadgets()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -230,7 +247,9 @@ class _homepage_appState extends State<homepage_app> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Electronics()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -253,7 +272,9 @@ class _homepage_appState extends State<homepage_app> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Electronics()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -276,7 +297,9 @@ class _homepage_appState extends State<homepage_app> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Health()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -299,7 +322,9 @@ class _homepage_appState extends State<homepage_app> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Catagory_Global()));
+                              },
                               child: Container(
                                 height: hei / 12,
                                 width: wid / 6,
@@ -344,7 +369,9 @@ class _homepage_appState extends State<homepage_app> {
                           fontSize: hei / 38, fontWeight: FontWeight.bold),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Product_ListView()));
+                      },
                       child: Text(
                         "More",
                         style: TextStyle(
@@ -409,7 +436,8 @@ class _homepage_appState extends State<homepage_app> {
                               Image.network(
                                 product_data.prouctname[index].imgurl,
                                 height: hei / 5.2,
-                                width: wid / 2.5,
+                                width: wid / 2,
+                                fit: BoxFit.fill,
                               ),
                               SizedBox(
                                 height: hei / 140,
@@ -438,7 +466,7 @@ class _homepage_appState extends State<homepage_app> {
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.orange,
-                                          fontSize: hei / 33),
+                                          fontSize: hei / 35),
                                     ),
                                     SizedBox(
                                       width: wid / 77,

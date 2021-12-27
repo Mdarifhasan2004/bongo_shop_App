@@ -3,7 +3,7 @@ class productinformation {
   final List<custom_product_display> prouctname = [
     custom_product_display(
         "Men's Strysish Shoes",
-        "https://i.pinimg.com/originals/f4/5f/60/f45f608cc8624fd6404b0aa6df42607f.png",
+        "https://static-01.daraz.com.bd/p/mdc/cf4fb90c3a1dc00f9fdb259e18e03c2b.jpg",
         5,
         1000,
         0.1,
@@ -11,7 +11,7 @@ class productinformation {
         1200),
     custom_product_display(
         "Girl's stylish shirt",
-        "https://www.pngkit.com/png/full/224-2245139_space-kitteh-girls-t-shirt-kawaii-kid-shirts.png",
+        "https://static-01.daraz.com.bd/p/8794033bd9e86d911aea6eb81870f56b.jpg",
         4.6,
         220,
         0.1,
@@ -19,7 +19,7 @@ class productinformation {
         340),
     custom_product_display(
         "M120 Smart band watch",
-        "https://www.pngarts.com/files/9/Android-Smart-Band-PNG-Download-Image.png",
+        "https://static-01.daraz.com.bd/p/162dff06ce1c57fccecb887f77cc9281.jpg_200x200q80.jpg_.webp",
         5,
         1200,
         0.1,
@@ -27,7 +27,7 @@ class productinformation {
         1500),
     custom_product_display(
         "Latest white lighter",
-        "https://i.pinimg.com/originals/25/ea/12/25ea121fd6c3ec7f7fa31b8f859368ae.png",
+        "https://ae01.alicdn.com/kf/H3b0b2c09c7ed49dbafc088c60950d2460.jpg?width=1000&height=1000&hash=2000",
         5,
         600,
         0.1,
@@ -35,7 +35,7 @@ class productinformation {
         900),
     custom_product_display(
         "I-phone 13 pro max cover",
-        "https://www.pngall.com/wp-content/uploads/11/iPhone-13-Pro-Max.png",
+        "https://static-01.daraz.com.bd/p/3c79ffa68f7ccd03b3e0eb1fe2a73388.jpg",
         5,
         240,
         0.1,

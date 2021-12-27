@@ -43,10 +43,10 @@ class _profileState extends State<profile> {
     var hei = MediaQuery.of(context).size.height;
     var wid = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xFF505050),
+      backgroundColor: Color(0xFF3BB73E),
       drawer: custom_drawer(),
       appBar: AppBar(
-        backgroundColor: Color(0xFF505050),
+        backgroundColor: Color(0xFF3BB73E),
         elevation: 0,
         title: Text("My Profile"),
       ),
@@ -57,7 +57,7 @@ class _profileState extends State<profile> {
               children: [
                 Container(
                   height: hei/7.5,
-                  color: Color(0xFF505050),
+                  color: Color(0xFF3BB73E),
                 ),
                 Container(
                   height: hei/1.31,
@@ -65,8 +65,8 @@ class _profileState extends State<profile> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(35),
-                      topRight: Radius.circular(35),
+                      topLeft: Radius.circular(0),
+                      topRight: Radius.circular(130),
                     ),
                   ),
                   child: ListView(
@@ -80,20 +80,21 @@ class _profileState extends State<profile> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text ('$name_value',style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: hei/45
-                                      ),),
-                                      Text ('$email_value',style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: hei/45
-                                      ),)
-                                    ],
-                                  )
+                                  SizedBox(height: 35,)
+                                  // Column(
+                                  //   mainAxisAlignment: MainAxisAlignment.center,
+                                  //   crossAxisAlignment: CrossAxisAlignment.start,
+                                  //   children: [
+                                  //     Text ('$name_value',style: TextStyle(
+                                  //       fontWeight: FontWeight.bold,
+                                  //       fontSize: hei/45
+                                  //     ),),
+                                  //     Text ('$email_value',style: TextStyle(
+                                  //         fontWeight: FontWeight.w600,
+                                  //         fontSize: hei/45
+                                  //     ),)
+                                  //   ],
+                                  // )
                                 ],
                               ),
                             ),
@@ -103,12 +104,12 @@ class _profileState extends State<profile> {
                       SizedBox(height: hei/55),
                       Divider(
                         thickness: 0.1,
-                          color: Color(0xFF505050),
+                          color: Color(0xFF3BB73E),
                       ),
                       TextButton(onPressed: (){},
                         child: ListTile(
-                          leading: Icon (Icons.account_circle_sharp,size: hei/23),
-                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          leading: Icon (Icons.account_circle_sharp,size: hei/23, color: Color(0xFF3BB73E),),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23,color: Color(0xFF3BB73E),),
                           title: Text ("Account Information",style: GoogleFonts.notoSans(textStyle: TextStyle(
                             fontSize: hei/45,fontWeight: FontWeight.w400,
                           )),),
@@ -116,8 +117,8 @@ class _profileState extends State<profile> {
                       ),
                       TextButton(onPressed: (){},
                         child: ListTile(
-                            leading: Icon (Icons.shop_outlined,size: hei/23),
-                           trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                            leading: Icon (Icons.shop_outlined,size: hei/23, color: Color(0xFF3BB73E),),
+                           trailing:  Icon (Icons.arrow_forward ,size: hei/23, color: Color(0xFF3BB73E),),
                            title: Text ("My Orders",style: GoogleFonts.notoSans(textStyle: TextStyle(
                              fontSize: hei/45,fontWeight: FontWeight.w400,
                            )),),
@@ -125,9 +126,18 @@ class _profileState extends State<profile> {
                       ),
                       TextButton(onPressed: (){},
                         child: ListTile(
-                          leading: Icon (Icons.location_on_outlined,size: hei/23),
-                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          leading: Icon (Icons.location_on_outlined,size: hei/23, color: Color(0xFF3BB73E),),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23, color: Color(0xFF3BB73E),),
                           title: Text ("My Delivery Address",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                            fontSize: hei/45,fontWeight: FontWeight.w400,
+                          )),),
+                        ),
+                      ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                          leading: Icon (Icons.shop_outlined,size: hei/23, color: Color(0xFF3BB73E),),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23, color: Color(0xFF3BB73E),),
+                          title: Text ("Payment Mathodes",style: GoogleFonts.notoSans(textStyle: TextStyle(
                             fontSize: hei/45,fontWeight: FontWeight.w400,
                           )),),
                         ),
@@ -135,8 +145,8 @@ class _profileState extends State<profile> {
 
                       TextButton(onPressed: (){},
                         child: ListTile(
-                          leading: Icon ( Icons.policy_outlined,size: hei/23),
-                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          leading: Icon ( Icons.policy_outlined,size: hei/23, color: Color(0xFF3BB73E),),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23,color: Color(0xFF3BB73E),),
                           title: Text ("Privacy Policy",style: GoogleFonts.notoSans(textStyle: TextStyle(
                             fontSize: hei/45,fontWeight: FontWeight.w400,
                           )),),
@@ -144,17 +154,17 @@ class _profileState extends State<profile> {
                       ),
                       TextButton(onPressed: (){},
                         child: ListTile(
-                          leading: Icon (Icons.add_chart,size: hei/23),
-                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                          title: Text ("About",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                          leading: Icon (Icons.add_chart,size: hei/23, color: Color(0xFF3BB73E),),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23, color: Color(0xFF3BB73E),),
+                          title: Text ("About App",style: GoogleFonts.notoSans(textStyle: TextStyle(
                             fontSize: hei/45,fontWeight: FontWeight.w400,
                           )),),
                         ),
                       ),
                       TextButton(onPressed: (){},
                         child: ListTile(
-                          leading: Icon (Icons.exit_to_app_outlined,size: hei/23),
-                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          leading: Icon (Icons.exit_to_app_outlined,size: hei/23, color: Color(0xFF3BB73E),),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23, color: Color(0xFF3BB73E),),
                           title: Text ("Logout",style: GoogleFonts.notoSans(textStyle: TextStyle(
                             fontSize: hei/45,fontWeight: FontWeight.w400,
                           )),),
@@ -167,13 +177,13 @@ class _profileState extends State<profile> {
               ],
             ),
             Positioned(
-                top: hei/15,
-                left: hei / 20,
+                top: hei/22,
+                left: hei / 25,
                 child: CircleAvatar(
-                  radius: hei/16,
-                  backgroundColor: Color(0xFF505050),
+                  radius: hei/12,
+                  backgroundColor: Color(0xFF000000),
                   child: CircleAvatar(
-                    radius: hei/18,
+                    radius: hei/13.5,
                     backgroundImage: gender_value == 2 ? AssetImage('assets/female.png'):AssetImage('assets/male.png'),
                   ),
                 )),

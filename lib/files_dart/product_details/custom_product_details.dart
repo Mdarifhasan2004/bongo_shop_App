@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:bango_shop/files_dart/product_details/custom_product_display.dart';
@@ -72,7 +73,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                                       .toString(),
                               style: TextStyle(
                                   fontSize: hei / 35,
-                                  color: Colors.orange),
+                                  color: Colors.redAccent),
                             ),
                             Text(
                               "৳" +
@@ -94,7 +95,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                               Navigator.pop(context);
                             },
                             icon: Icon(
-                              Icons.cancel,
+                              Icons.cancel, color: Color(0xFF3BB73E),
                               size: hei / 25,
                             ))
                       ],
@@ -140,14 +141,14 @@ class _customproduct_detailsState extends State<customproduct_details> {
                                           color: Colors.white,
                                           fontSize: 24),
                                     ),
-                                    backgroundColor: Colors.black,
+                                    backgroundColor: Color(0xFF3BB73E),
                                   )),
 
                               SizedBox(width: 5),
                               Text(
                                 "$product_cart",
                                 style: TextStyle(
-                                    color: Colors.orange,
+                                    color: Colors.blue,
                                     fontSize: hei / 40),
                               ),
                               SizedBox(width: 5),
@@ -169,7 +170,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                                           fontSize: 24),
                                     ),
                                     maxRadius: 20,
-                                    backgroundColor: Colors.black,
+                                    backgroundColor: Color(0xFF3BB73E),
                                   )),
                             ],
                           )
@@ -195,7 +196,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                           Text(
                             "৳" + "$total_product_value",
                             style: TextStyle(
-                                fontSize: 24, color: Colors.orange),
+                                fontSize: 24, color: Colors.redAccent),
                           )
                         ],
                       ),
@@ -206,6 +207,119 @@ class _customproduct_detailsState extends State<customproduct_details> {
                     Padding(
                       padding: EdgeInsets.only(
                           top: hei / 150,
+                          // left: wid / 75,
+                          // right: wid / 75,
+                          bottom: hei / 150),
+                      child: Row(
+                        mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+                        children: [
+
+                          InkWell(
+                            onTap: (){
+                              showDialog(
+                                  context: context,
+                                  builder: (_) => AlertDialog(
+                                    title: Icon(Icons.done, size: 100,),
+
+                                    content: Text('Successfully added to the cart'),
+                                  )
+                              );                            },
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                width: wid / 1,
+                                height: hei / 17,
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                    BorderRadius.circular(50),
+                                  color: Color(0xFF3BB73E),),
+                                child: Center(
+                                  child: Text(
+                                    "Add to cart",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: hei / 42,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+              ;
+            });
+          });
+    }
+    show_buy(){
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return StatefulBuilder(builder:
+                (BuildContext context, StateSetter setState) {
+              return Container(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: hei / 10,
+                          width: wid / 5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Image.network(
+                              widget.product_details.imgurl),
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "৳" +
+                                  widget.product_details.proprice
+                                      .toString(),
+                              style: TextStyle(
+                                  fontSize: hei / 35,
+                                  color: Colors.redAccent),
+                            ),
+                            Text(
+                              "৳" +
+                                  widget.product_details.price
+                                      .toString(),
+                              style: TextStyle(
+                                  fontSize: hei / 43,
+                                  decoration:
+                                  TextDecoration.lineThrough,
+                                  decorationThickness: 1.6),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: wid / 2,
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.cancel, color: Color(0xFF3BB73E),
+                              size: hei / 25,
+                            ))
+                      ],
+                    ),
+                    SizedBox(height: hei / 40),
+                    Divider(
+                      thickness: 2,
+                    ),
+                    SizedBox(height: hei / 40),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: hei / 150,
                           left: wid / 75,
                           right: wid / 75,
                           bottom: hei / 150),
@@ -213,42 +327,127 @@ class _customproduct_detailsState extends State<customproduct_details> {
                         mainAxisAlignment:
                         MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: wid / 2.2,
-                            height: hei / 15,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                BorderRadius.circular(6),
-                                color: Colors.redAccent),
-                            child: Center(
-                              child: Text(
-                                "Add to Cart",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: hei / 42,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                          Text(
+                            "Quantity",
+                            style: TextStyle(fontSize: hei / 43),
                           ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      product_cart--;
+                                      cheacknumber();
+                                      total_product_value =
+                                          total_product_value -
+                                              widget.product_details
+                                                  .proprice;
+                                      cheackvalue();
+                                    });
+                                  },
+                                  icon: CircleAvatar(
+                                    maxRadius: 20,
+                                    child: Text(
+                                      "-",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24),
+                                    ),
+                                    backgroundColor: Color(0xFF3BB73E),
+                                  )),
+
+                              SizedBox(width: 5),
+                              Text(
+                                "$product_cart",
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontSize: hei / 40),
+                              ),
+                              SizedBox(width: 5),
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      product_cart++;
+                                      total_product_value = widget
+                                          .product_details
+                                          .proprice *
+                                          product_cart;
+                                    });
+                                  },
+                                  icon: CircleAvatar(
+                                    child: Text(
+                                      "+",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24),
+                                    ),
+                                    maxRadius: 20,
+                                    backgroundColor: Color(0xFF3BB73E),
+                                  )),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: hei / 40),
+                    Divider(
+                      thickness: 2,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: hei / 150,
+                          left: wid / 75,
+                          right: wid / 75,
+                          bottom: hei / 150),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Total : ",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "৳" + "$total_product_value",
+                            style: TextStyle(
+                                fontSize: 24, color: Colors.redAccent),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: hei / 7,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: hei / 150,
+                          // left: wid / 75,
+                          // right: wid / 75,
+                          bottom: hei / 150),
+                      child: Row(
+                        mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+                        children: [
+
                           InkWell(
                             onTap: (){
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>oder_now(widget.product_details,total_product_value)));
                             },
-                            child: Container(
-                              width: wid / 2.2,
-                              height: hei / 15,
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                  BorderRadius.circular(6),
-                                  color: Colors.orange),
-                              child: Center(
-                                child: Text(
-                                  "Buy Now",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: hei / 42,
-                                    fontWeight: FontWeight.bold,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Container(
+                                width: wid / 1,
+                                height: hei / 16,
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                    BorderRadius.circular(50),
+                                  color: Color(0xFF3BB73E),),
+                                child: Center(
+                                  child: Text(
+                                    "Continue",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: hei / 42,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -277,7 +476,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                   onPressed: () {},
                   icon: Icon(Icons.storefront_sharp),
                   iconSize: hei / 28,
-                  color: Colors.orange),
+                  color: Colors.redAccent),
               Padding(
                 padding: EdgeInsets.only(top: hei / 100, bottom: hei / 100),
                 child: VerticalDivider(
@@ -289,18 +488,18 @@ class _customproduct_detailsState extends State<customproduct_details> {
                   onPressed: () {},
                   icon: Icon(Icons.chat),
                   iconSize: hei / 28,
-                  color: Colors.orange),
+                  color: Colors.redAccent),
               SizedBox(width: wid / 13),
               InkWell(
                 onTap: () {
                  show_cart();
                 },
                 child: Container(
-                  width: wid / 3.5,
-                  height: hei / 15,
+                  width: wid / 3.2,
+                  height: hei / 16,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: Colors.redAccent),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(50), bottomLeft: Radius.circular(50)),
+                    color: Color(0xFF3BB73E),),
                   child: Center(
                     child: Text(
                       "Add to Cart",
@@ -313,19 +512,18 @@ class _customproduct_detailsState extends State<customproduct_details> {
                   ),
                 ),
               ),
-              SizedBox(width: wid / 40),
               InkWell(
                 onTap: (){
-                  show_cart();
+                  show_buy();
                 },
                 child: Padding(
                   padding: EdgeInsets.only(right: wid / 50),
                   child: Container(
-                    width: wid / 3.5,
-                    height: hei / 15,
+                    width: wid / 3.2,
+                    height: hei / 16,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Colors.orange),
+                        borderRadius: BorderRadius.only(bottomRight: Radius.circular(50), topRight: Radius.circular(50)),
+                        color: Colors.redAccent),
                     child: Center(
                       child: Text(
                         "Buy Now",
@@ -345,7 +543,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
       ),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xFF505050),
+        backgroundColor: Color(0xFF3BB73E),
         actions: [
           IconButton(
               onPressed: () {},
@@ -385,7 +583,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                     "৳" + widget.product_details.proprice.toString(),
                     style: TextStyle(
                         fontSize: hei / 26,
-                        color: Colors.orange,
+                        color: Colors.redAccent,
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: wid / 2),

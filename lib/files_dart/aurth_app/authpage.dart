@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:bango_shop/controlpanel.dart';
 import 'package:bango_shop/files_dart/homepage/homepage.dart';
 import 'package:bango_shop/files_dart/aurth_app/passwordreset.dart';
 import 'package:bango_shop/files_dart/aurth_app/signup.dart';
@@ -151,7 +151,7 @@ class _authState extends State<auth> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => homepage_app()));
+                                        builder: (context) => main_controlpanel()));
                               } else {
                                 Fluttertoast.showToast(
                                     msg:
